@@ -1,3 +1,5 @@
+from random import random
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import pytest
@@ -13,6 +15,7 @@ def driver():
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     chrome_driver = webdriver.Chrome(options=options)
+    # chrome_driver.save_screenshot(f'screen{random.randrange(1, 10000)}.png')
     # sleep(3)
     return chrome_driver
 
